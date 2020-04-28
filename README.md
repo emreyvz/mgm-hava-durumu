@@ -7,16 +7,17 @@ Bu PHP sınıfı sayesinde www.mgm.gov.tr adresinden kolayca hava durumu bilgile
 
 **Erişilebilen Property'ler**
 
-- Anlık sıcaklık
-- Şehir Enlem Boylam Bilgileri
-- Gün doğumu ve günbatımı saatleri
-- Hava Durumu (örn: sağanak yağışlı)
-- Anlık Nem
-- Anlık Rüzgar Hızı
-- Anlık Basınç
-- Anlık Denize İndirgenmiş Basınç
-- 5 günlük tahmin
-- Hava Durumu ikon adresi (url)
+- Anlık sıcaklık | getCurrentDegree()
+- Şehir Enlem Boylam Bilgileri | getLongitude() & getLatitude()
+- Gün doğumu ve günbatımı saatleri | getSunrise() & getSunset()
+- Hava Durumu (örn: sağanak yağışlı) | getCurrentCondition()
+- Hava Durumu Kodu (örn: SY) | getCurrentConditionCode()
+- Anlık Nem | getCurrentHumidity()
+- Anlık Rüzgar Hızı | getCurrentWindSpeed()
+- Anlık Basınç | getCurrentPressure()
+- Anlık Denize İndirgenmiş Basınç | getCurrentSeaLevelPressure()
+- 5 günlük tahmin | getForecast()
+- Hava Durumu ikon adresi (url) | getConditionIcon()
 
 
 # Örnekler
