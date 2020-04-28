@@ -189,9 +189,9 @@ class mgmWeather
      * @return string
      */
 
-    function getConditionIcon($condition)
+    function getConditionIcon($conditionCode)
     {
-        return "https://www.mgm.gov.tr/Images_Sys/hadiseler/" . $condition . ".svg";
+        return "https://www.mgm.gov.tr/Images_Sys/hadiseler/" . $conditionCode . ".svg";
     }
 
 
