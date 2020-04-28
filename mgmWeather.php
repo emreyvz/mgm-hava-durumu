@@ -50,7 +50,7 @@ class mgmWeather
 
     function setCurrentConditionCode($condition)
     {
-        $this->currentCondition = $condition;
+        $this->currentConditionCode = $condition;
     }
 
     function setCurrentHumidity($humidity)
@@ -96,7 +96,7 @@ class mgmWeather
 
     function getCurrentConditionCode()
     {
-        return $this->currentCondition;
+        return $this->currentConditionCode;
     }
 
     function getCurrentHumidity()
