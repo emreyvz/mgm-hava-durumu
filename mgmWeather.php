@@ -265,7 +265,7 @@ class mgmWeather
         $cityCurrentWeather = json_decode($cityCurrentWeatherJson, true);
         $this->currentPressure =  $cityCurrentWeather[0]["aktuelBasinc"];
         $this->currentSeaLevelPressure =  $cityCurrentWeather[0]["denizeIndirgenmisBasinc"];
-        $this->currentCondition =  $cityCurrentWeather[0]["hadiseKodu"];
+        $this->currentConditionCode =  $cityCurrentWeather[0]["hadiseKodu"];
         $this->currentHumidity =  $cityCurrentWeather[0]["nem"];
         $this->currentWindSpeed =  $cityCurrentWeather[0]["ruzgarHiz"];
         $this->currentDegree =  $cityCurrentWeather[0]["sicaklik"];
