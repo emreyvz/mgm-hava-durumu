@@ -30,7 +30,7 @@ class mgmWeather
     public $latitude;
     public $longitude;
     public $currentDegree;
-    public $currentCondition;
+    public $currentConditionCode;
     public $currentHumidity;
     public $currentWindSpeed;
     public $currentPressure;
@@ -48,7 +48,7 @@ class mgmWeather
         $this->currentDegree = $degree;
     }
 
-    function setCurrentCondition($condition)
+    function setCurrentConditionCode($condition)
     {
         $this->currentCondition = $condition;
     }
@@ -94,7 +94,7 @@ class mgmWeather
         return $this->currentDegree;
     }
 
-    function getCurrentCondition()
+    function getCurrentConditionCode()
     {
         return $this->currentCondition;
     }
@@ -132,6 +132,51 @@ class mgmWeather
     function getForecast()
     {
         return $this->forecast;
+    }
+
+
+
+
+    /**
+     * Method for getting weather condition by using condition code
+     * @return string
+     */
+
+    function getCurrentCondition()
+    {
+
+        $conditionCodes = Array(
+            "PB"=>"Parçalı Bulutlu",
+            "GSY"=>"Gökgürültülü Sağanak Yağışlı",
+            "HSY"=>"Hafif Sağanak Yağışlı",
+            "SY"=>"Sağanak Yağışlı",
+            "A"=>"Açık",
+            "AB"=>"Az Bulutlu",
+            "CB"=>"Çok Bulutlu",
+            "D"=>"Duman",
+            "HY"=>"Hafif Yağmurlu",
+            "HKY"=>"Hafif Kar Yağışlı",
+            "MSY"=>"Yer Yer Sağanak Yağışlı",
+            "KKY"=>"Karla Karışık Yağmurlu",
+            "GKR"=>"Güneyli Kuvvetli Rüzgar",
+            "SCK"=>"Sıcak",
+            "PUS"=>"PUS",
+            "Y"=>"Yağmurlu",
+            "K"=>"Kar Yağışlı",
+            "DY"=>"Dolu",
+            "R"=>"Rüzgarlı",
+            "KKR"=>"Kuzeyli Kuvvetli Rüzgar",
+            "SGK"=>"Soğuk",
+            "SIS"=>"Sis",
+            "KY"=>"Kuvvetli Yağmurlu",
+            "KSY"=>"Kuvvetli Sağanak Yağışlı",
+            "YKY"=>"Yoğun Kar Yağışlı",
+            "KF"=>"Toz veya Kum Fırtınası",
+            "KGY"=>"Kuvvetli Gökgürültülü Sağanak Yağışlı"
+        );
+      
+        return $conditionCodes[$this->getCurrentConditionCode()];
+
     }
 
 
