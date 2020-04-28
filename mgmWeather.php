@@ -134,6 +134,17 @@ class mgmWeather
         return $this->forecast;
     }
 
+    function getLongitude()
+    {
+        return $this->longitude;
+    }
+
+    function getLatitude()
+    {
+        return $this->latitude;
+    }
+
+
 
 
 
