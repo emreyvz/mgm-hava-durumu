@@ -56,7 +56,7 @@ foreach ($mgmWeather->getForecast() as $day) {
 
 ## Lisans
 
-[![License](https://opensource.org/files/osi_keyhole_300X300_90ppi_0.png =50x50)]
+![](https://opensource.org/files/osi_keyhole_300X300_90ppi_0.png =50x50)
 
 - **[Apache 2.0 License](https://www.apache.org/licenses/LICENSE-2.0)**
 - Copyright 2020 © Emre Yavuz
