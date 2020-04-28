@@ -1,4 +1,5 @@
 <?php
+
 /**
  * mgmWeather - a fast and reliable weather library
  * Written by Emre Yavuz & github.com/emreyvz
@@ -149,6 +150,29 @@ class mgmWeather
 
 
     /**
+     * Method for clearing Turkish characters from city name
+     *
+     * @param $cityName
+     * 
+     * @return string
+     */
+
+    function clearTrCharacter($cityName)
+    {
+        $cityName = strtolower($cityName);
+        $cityName = str_replace("ı", "i", $cityName);
+        $cityName = str_replace("ü", "u", $cityName);
+        $cityName = str_replace("ğ", "g", $cityName);
+        $cityName = str_replace("ş", "s", $cityName);
+        $cityName = str_replace("ö", "o", $cityName);
+        $cityName = str_replace("ç", "c", $cityName);
+        return $cityName;
+    }
+
+
+
+
+    /**
      * Method for getting weather condition by using condition code
      * @return string
      */
@@ -156,38 +180,37 @@ class mgmWeather
     function getCurrentCondition()
     {
 
-        $conditionCodes = Array(
-            "PB"=>"Parçalı Bulutlu",
-            "GSY"=>"Gökgürültülü Sağanak Yağışlı",
-            "HSY"=>"Hafif Sağanak Yağışlı",
-            "SY"=>"Sağanak Yağışlı",
-            "A"=>"Açık",
-            "AB"=>"Az Bulutlu",
-            "CB"=>"Çok Bulutlu",
-            "D"=>"Duman",
-            "HY"=>"Hafif Yağmurlu",
-            "HKY"=>"Hafif Kar Yağışlı",
-            "MSY"=>"Yer Yer Sağanak Yağışlı",
-            "KKY"=>"Karla Karışık Yağmurlu",
-            "GKR"=>"Güneyli Kuvvetli Rüzgar",
-            "SCK"=>"Sıcak",
-            "PUS"=>"PUS",
-            "Y"=>"Yağmurlu",
-            "K"=>"Kar Yağışlı",
-            "DY"=>"Dolu",
-            "R"=>"Rüzgarlı",
-            "KKR"=>"Kuzeyli Kuvvetli Rüzgar",
-            "SGK"=>"Soğuk",
-            "SIS"=>"Sis",
-            "KY"=>"Kuvvetli Yağmurlu",
-            "KSY"=>"Kuvvetli Sağanak Yağışlı",
-            "YKY"=>"Yoğun Kar Yağışlı",
-            "KF"=>"Toz veya Kum Fırtınası",
-            "KGY"=>"Kuvvetli Gökgürültülü Sağanak Yağışlı"
+        $conditionCodes = array(
+            "PB" => "Parçalı Bulutlu",
+            "GSY" => "Gökgürültülü Sağanak Yağışlı",
+            "HSY" => "Hafif Sağanak Yağışlı",
+            "SY" => "Sağanak Yağışlı",
+            "A" => "Açık",
+            "AB" => "Az Bulutlu",
+            "CB" => "Çok Bulutlu",
+            "D" => "Duman",
+            "HY" => "Hafif Yağmurlu",
+            "HKY" => "Hafif Kar Yağışlı",
+            "MSY" => "Yer Yer Sağanak Yağışlı",
+            "KKY" => "Karla Karışık Yağmurlu",
+            "GKR" => "Güneyli Kuvvetli Rüzgar",
+            "SCK" => "Sıcak",
+            "PUS" => "PUS",
+            "Y" => "Yağmurlu",
+            "K" => "Kar Yağışlı",
+            "DY" => "Dolu",
+            "R" => "Rüzgarlı",
+            "KKR" => "Kuzeyli Kuvvetli Rüzgar",
+            "SGK" => "Soğuk",
+            "SIS" => "Sis",
+            "KY" => "Kuvvetli Yağmurlu",
+            "KSY" => "Kuvvetli Sağanak Yağışlı",
+            "YKY" => "Yoğun Kar Yağışlı",
+            "KF" => "Toz veya Kum Fırtınası",
+            "KGY" => "Kuvvetli Gökgürültülü Sağanak Yağışlı"
         );
-      
-        return $conditionCodes[$this->getCurrentConditionCode()];
 
+        return $conditionCodes[$this->getCurrentConditionCode()];
     }
 
 
@@ -256,7 +279,7 @@ class mgmWeather
     function fetchData()
     {
 
-        $cityDataJson = $this->request("https://servis.mgm.gov.tr/web/merkezler?il=" . $this->location);
+        $cityDataJson = $this->request("https://servis.mgm.gov.tr/web/merkezler?il=" . $this->clearTrCharacter($this->location));
         $cityData = json_decode($cityDataJson, true);
         $this->locationId =  $cityData[0]["merkezId"];
         $this->longitude =  $cityData[0]["boylam"];
