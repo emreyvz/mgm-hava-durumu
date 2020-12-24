@@ -3,7 +3,7 @@
 # Meteoroloji Genel Müdürlüğü Hava Durumu Sınıfı
 
 Bu PHP sınıfı sayesinde www.mgm.gov.tr adresinden kolayca hava durumu bilgilerini alabilirsiniz. 
-> Emre Yavuz tarafından yazılmıştır.
+> Emre Yavuz tarafından PHP kullanarak yazılmıştır.
 
 **Erişilebilen Property'ler**
 
