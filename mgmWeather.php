@@ -26,6 +26,7 @@ class mgmWeather
      */
 
 
+
     public $location;
     public $locationId;
     public $latitude;
@@ -39,6 +40,7 @@ class mgmWeather
     public $sunrise;
     public $sunset;
     public $forecast;
+
 
 
     /**
@@ -147,8 +149,6 @@ class mgmWeather
 
 
 
-
-
     /**
      * Method for clearing Turkish characters from city name
      *
@@ -168,7 +168,6 @@ class mgmWeather
         $cityName = str_replace("ç", "c", $cityName);
         return $cityName;
     }
-
 
 
 
@@ -273,6 +272,7 @@ class mgmWeather
     }
 
 
+    
     /**
      * Method that fetch all essential data from www.mgm.gov.tr and www.sunrise-sunset.org
      */
