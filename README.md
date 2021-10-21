@@ -17,7 +17,7 @@ Bu PHP sınıfı sayesinde www.mgm.gov.tr adresinden kolayca hava durumu bilgile
 - Anlık Basınç | getCurrentPressure()
 - Anlık Denize İndirgenmiş Basınç | getCurrentSeaLevelPressure()
 - 5 günlük tahmin | getForecast()
-- Hava Durumu ikon adresi (url) | getConditionIcon()
+- Hava Durumu ikon adresi (url) | getConditionIcon(@param)
 
 
 # Örnekler
