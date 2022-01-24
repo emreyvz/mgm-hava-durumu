@@ -1,6 +1,6 @@
 ![](https://i.ibb.co/8r0K7fW/banner.png)
 
-# Meteoroloji Genel Müdürlüğü Hava Durumu Sınıfı
+# Meteoroloji Genel Müdürlüğü Hava Durumu Sınıfı  (Unofficial)
 
 Bu PHP sınıfı sayesinde www.mgm.gov.tr adresinden kolayca hava durumu bilgilerini alabilirsiniz. 
 > Emre Yavuz tarafından PHP kullanarak yazılmıştır  | github.com/emreyvz
