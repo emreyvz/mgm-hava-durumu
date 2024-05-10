@@ -60,4 +60,4 @@ foreach ($mgmWeather->getForecast() as $day) {
 <img src="https://opensource.org/files/osi_keyhole_300X300_90ppi_0.png" height="24" width="24">
 
 - **[Apache 2.0 License](https://www.apache.org/licenses/LICENSE-2.0)**
-- 2022 © Emre Yavuz
+- 2024 © Emre Yavuz
